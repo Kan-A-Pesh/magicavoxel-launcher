@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/icons/favicon-16x16.png" />
+        <link rel="manifest" href="./images/icons/site.webmanifest" />
+        <link rel="mask-icon" href="./images/icons/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="shortcut icon" href="./images/icons/favicon.ico" />
+        <meta name="apple-mobile-web-app-title" content="MagicaVoxel Launcher" />
+        <meta name="application-name" content="MagicaVoxel Launcher" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="msapplication-config" content="./images/icons/browserconfig.xml" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <title>MagicaVoxel Launcher</title>
+
+        <link rel="stylesheet" href="./styles/index.css" />
+        <script src="./scripts/index.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div class="thumbnail">
+                <img alt="Thumbnail" id="THUMBNAIL" />
+            </div>
+            <div class="actions">
+                <h2>MagicaVoxel Launcher</h2>
+                <button class="btn btn-ghost" id="OPEN_WORKSPACE">
+                    <img alt="plus" src="./images/feather/plus.svg" />
+                    Open workspace
+                </button>
+                <button class="btn btn-ghost" id="SETTINGS">
+                    <img alt="settings" src="./images/feather/settings.svg" />
+                    Settings
+                </button>
+                <button class="btn btn-ghost" id="GITHUB">
+                    <img alt="github" src="./images/feather/github.svg" />
+                    GitHub
+                </button>
+            </div>
+            <div class="recents">
+                <h2>Recent workspaces</h2>
+                <ul id="RECENTS">
+                    <div x-template-name="RECENTS">
+                        <li class="btn btn-ghost recents-item">
+                            <div class="flex-grow-1 description">
+                                <h3 class="name" x-template="NAME"></h3>
+                                <p class="path" x-template="PATH"></p>
+                            </div>
+                            <h6 x-template="DATE"></h6>
+                            <button x-template="DELETE" class="btn btn-small btn-ghost">
+                                <img alt="delete" src="./images/feather/x.svg" />
+                            </button>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </main>
+
+        <div class="modal hidden" id="SETTINGS_MODAL">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button id="SETTINGS_CLOSE" class="btn btn-small btn-ghost">
+                        <img alt="close" src="./images/feather/x.svg" />
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="SETTINGS_FORM">
+                        <div class="form-group">
+                            <label for="path">MagicaVoxel path</label>
+                            <input name="path" type="text" />
+                        </div>
+                        <button class="btn btn-filled" type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
