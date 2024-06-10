@@ -14,7 +14,7 @@ module.exports = {
         },
         {
             name: "@electron-forge/maker-zip",
-            platforms: ["darwin"],
+            platforms: ["darwin", "linux"],
         },
         {
             name: "@electron-forge/maker-deb",
@@ -45,5 +45,16 @@ module.exports = {
             [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
             [FuseV1Options.OnlyLoadAppFromAsar]: true,
         }),
+    ],
+    publishers: [
+        {
+            name: "@electron-forge/publisher-github",
+            config: {
+                repository: {
+                    owner: "Kan-A-Pesh",
+                    name: "magicavoxel-launcher",
+                },
+            },
+        },
     ],
 };

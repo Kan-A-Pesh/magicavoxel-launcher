@@ -2,13 +2,16 @@ import { app, BrowserWindow, ipcMain } from "electron/main";
 import { join } from "node:path";
 import actionsFn from "./actions.mjs";
 
+// run this as early in the main process as possible
+if (require("electron-squirrel-startup")) app.quit();
+
 const __dirname = import.meta.dirname;
 
 function createWindow() {
     const win = new BrowserWindow({
         width: 700,
         height: 450,
-        icon: join(__dirname, "../public/assets/images/icons/icon_1024.png"),
+        icon: join(__dirname, "../public/images/icons/icon_1024.png"),
         webPreferences: {
             preload: join(__dirname, "preload.js"),
         },
