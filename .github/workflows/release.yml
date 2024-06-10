@@ -1,0 +1,28 @@
+name: Build and Release
+
+on:
+    workflow_dispatch:
+
+jobs:
+    release:
+        strategy:
+            matrix:
+                os: [macos-latest, ubuntu-latest, windows-latest]
+
+        runs-on: ${{ matrix.os }}
+
+        steps:
+            - name: Check out Git repository
+              uses: actions/checkout@v1
+
+            - name: Install Node.js, NPM and Yarn
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+            - run: npm ci
+
+            - name: Publish app
+              env:
+                  GITHUB_TOKEN: ${{ secrets.github_token }}
+              run: npm run publish
