@@ -1,9 +1,10 @@
 import { app, BrowserWindow, ipcMain } from "electron/main";
 import { join } from "node:path";
 import actionsFn from "./actions.mjs";
+import electronSquirrelStartup from "electron-squirrel-startup";
 
 // run this as early in the main process as possible
-if (require("electron-squirrel-startup")) app.quit();
+if (electronSquirrelStartup) app.quit();
 
 const __dirname = import.meta.dirname;
 
