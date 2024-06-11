@@ -23,10 +23,7 @@
         "launcher",
         "voxel"
     ],
-    "author": {
-        "name": "Kan-A-Pesh",
-        "url": "https://kan-a-pesh.fr"
-    },
+    "author": "Kan-A-Pesh",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/Kan-A-Pesh/magicavoxel-launcher/issues"
