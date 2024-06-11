@@ -6,7 +6,7 @@ A simple launcher for MagicaVoxel that allows you to select a folder as a worksp
   <img src="./docs/example.png" alt="Example screenshot" />
 </p>
 
-It is useful for those who want to keep their MagicaVoxel files organized in different folders (e.g., one folder for each project).\
+It is useful for those who want to keep their MagicaVoxel files organized in different folders (e.g., one folder for each project).
 
 ## How it works 🛠️
 
